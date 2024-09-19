@@ -1,22 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.user.UserFragment">
+    tools:context=".UserFragment"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_user"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:background="@color/purple_200">
+
+        <TextView
+            android:id="@+id/text_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Fragment"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+
+
+            android:background="@color/white"
+            android:src="@drawable/account"/>
+
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/profile_image"
+
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:text="Name"/>
+
+        <TextView
+            android:id="@+id/user_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/profile_image"
+            android:layout_below="@+id/user_name"
+
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Description"/>
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+
+            <Button
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/notifications_none"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Notification" />
+
+            <Button
+                android:id="@+id/summit_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/add_box"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Summit work" />
+
+
+            <Button
+                android:id="@+id/your_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/library_books"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Your work" />
+
+
+            <Button
+                android:id="@+id/following_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/account_box"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Following author" />
+
+
+            <Button
+                android:id="@+id/following_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/account_box"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Following artist" />
+
+            <Button
+                android:id="@+id/follower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/account_box"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Follower" />
+
+            <Button
+                android:id="@+id/history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/menu_book"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" History" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+
+            <Button
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/info_outline"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" About this app" />
+
+            <Button
+                android:id="@+id/helpandfeedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/help_outline"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Help and Feedback" />
+
+            <Button
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/settings"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Setting" />
+
+            <TextView
+                android:id="@+id/mute_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:drawableLeft="@drawable/cancel"
+
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text=" Mute_setting" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
