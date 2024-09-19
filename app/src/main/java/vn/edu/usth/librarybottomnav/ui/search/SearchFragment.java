@@ -99,11 +99,7 @@ public class SearchFragment extends Fragment {
         allBooksList.add(new ChildModelClass(R.drawable.book7, "Wandering Witch", "Jougi Shiraishi", "memaybeo"));
         allBooksList.add(new ChildModelClass(R.drawable.book8, "Mushoku Tensei", "Rifujin na Magonote", "memaybeo"));
 
-        // You can add more categories similar to "Latest Books" here
-        List<ChildModelClass> latestBooksList = new ArrayList<>(allBooksList.subList(0, 3));
-        List<ChildModelClass> recommendedBooksList = new ArrayList<>(allBooksList.subList(3, allBooksList.size()));
+        parentModelClassArrayList.add(new ParentModelClass("", allBooksList));
 
-        parentModelClassArrayList.add(new ParentModelClass("Latest Books", latestBooksList));
-        parentModelClassArrayList.add(new ParentModelClass("Recommended Books", recommendedBooksList));
     }
 }
