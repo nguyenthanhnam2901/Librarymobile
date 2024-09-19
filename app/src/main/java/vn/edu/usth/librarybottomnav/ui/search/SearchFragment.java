@@ -92,12 +92,12 @@ public class SearchFragment extends Fragment {
 
     private void setupInitialData() {
         // Add initial books to the list
-        allBooksList.add(new ChildModelClass(R.drawable.book1, "Spice and Wolf", "Isuna Hasekura", "memaybeo"));
-        allBooksList.add(new ChildModelClass(R.drawable.book2, "One in a Million", "Fuse", "memaybeo"));
-        allBooksList.add(new ChildModelClass(R.drawable.book3, "That time I got Reincarnated as a Slime", "Nishioishin", "memaybeo"));
-        allBooksList.add(new ChildModelClass(R.drawable.book4, "Monogatari", "Jougi Shiraishi", "memaybeo"));
-        allBooksList.add(new ChildModelClass(R.drawable.book5, "Wandering Witch", "Rifujin na Magonote", "memaybeo"));
-        allBooksList.add(new ChildModelClass(R.drawable.book6, "Mushoku Tensei", "Natsume Akatsuki", "memaybeo"));
+        allBooksList.add(new ChildModelClass(R.drawable.book3, "Spice and Wolf", "Isuna Hasekura", "memaybeo"));
+        allBooksList.add(new ChildModelClass(R.drawable.book9, "Konosuba", "Natsume Akatsuki", "memaybeo"));
+        allBooksList.add(new ChildModelClass(R.drawable.book5, "That time I got Reincarnated as a Slime", "Fuse", "memaybeo"));
+        allBooksList.add(new ChildModelClass(R.drawable.book6, "Monogatari", "Nishioishin", "memaybeo"));
+        allBooksList.add(new ChildModelClass(R.drawable.book7, "Wandering Witch", "Jougi Shiraishi", "memaybeo"));
+        allBooksList.add(new ChildModelClass(R.drawable.book8, "Mushoku Tensei", "Rifujin na Magonote", "memaybeo"));
 
         // You can add more categories similar to "Latest Books" here
         List<ChildModelClass> latestBooksList = new ArrayList<>(allBooksList.subList(0, 3));
