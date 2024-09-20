@@ -20,14 +20,9 @@ public class UserFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        UserViewModel userViewModel =
-                new ViewModelProvider(this).get(UserViewModel.class);
 
         binding = FragmentUserBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.textUser;
-        userViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         // Set OnClickListener for each button
         binding.notification.setOnClickListener(view -> {
@@ -46,9 +41,6 @@ public class UserFragment extends Fragment {
             Toast.makeText(getContext(), "Following Author clicked", Toast.LENGTH_SHORT).show();
         });
 
-        binding.followingArtist.setOnClickListener(view -> {
-            Toast.makeText(getContext(), "Following Artist clicked", Toast.LENGTH_SHORT).show();
-        });
 
         binding.follower.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Follower clicked", Toast.LENGTH_SHORT).show();
@@ -69,6 +61,10 @@ public class UserFragment extends Fragment {
 
         binding.setting.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Setting clicked", Toast.LENGTH_SHORT).show();
+        });
+
+        binding.muteSetting.setOnClickListener(view -> {
+            Toast.makeText(getContext(), "Mute setting clicked", Toast.LENGTH_SHORT).show();
         });
 
 

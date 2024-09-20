@@ -39,59 +39,59 @@ public class HomeFragment extends Fragment {
         ParentAdapterHorizontal parentAdapterHorizontal;
 
         // Add items to latestList
-        latestList.add(new ChildModelClass(R.drawable.book1, "Title", "Author", "Description"));
-        latestList.add(new ChildModelClass(R.drawable.book2, "Title", "Author", "Description"));
-        latestList.add(new ChildModelClass(R.drawable.book3, "Title", "Author", "Description"));
-        latestList.add(new ChildModelClass(R.drawable.book4, "Title", "Author", "Description"));
-        latestList.add(new ChildModelClass(R.drawable.book5, "Title", "Author", "Description"));
-        latestList.add(new ChildModelClass(R.drawable.book6, "Title", "Author", "Description"));
-        latestList.add(new ChildModelClass(R.drawable.book7, "Title", "Author", "Description"));
-        latestList.add(new ChildModelClass(R.drawable.book8, "Title", "Author", "Description"));
-        latestList.add(new ChildModelClass(R.drawable.book9, "Title", "Author", "Description"));
+        latestList.add(new ChildModelClass(R.drawable.book1, "Title", "Author", "Description", "H"));
+        latestList.add(new ChildModelClass(R.drawable.book2, "Title", "Author", "Description", "H"));
+        latestList.add(new ChildModelClass(R.drawable.book3, "Title", "Author", "Description", "H"));
+        latestList.add(new ChildModelClass(R.drawable.book4, "Title", "Author", "Description", "H"));
+        latestList.add(new ChildModelClass(R.drawable.book5, "Title", "Author", "Description", "H"));
+        latestList.add(new ChildModelClass(R.drawable.book6, "Title", "Author", "Description", "H"));
+        latestList.add(new ChildModelClass(R.drawable.book7, "Title", "Author", "Description", "H"));
+        latestList.add(new ChildModelClass(R.drawable.book8, "Title", "Author", "Description", "H"));
+        latestList.add(new ChildModelClass(R.drawable.book9, "Title", "Author", "Description", "H"));
 
         parentModelClassArrayList.add(new ParentModelClass("Latest Books", latestList));
 
         // Add items to recentlyWatchedList
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book1, "Title", "Author", "Description"));
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book2, "Title", "Author", "Description"));
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book3, "Title", "Author", "Description"));
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book4, "Title", "Author", "Description"));
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book5, "Title", "Author", "Description"));
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book6, "Title", "Author", "Description"));
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book7, "Title", "Author", "Description"));
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book8, "Title", "Author", "Description"));
-        recentlyWatchedList.add(new ChildModelClass(R.drawable.book9, "Title", "Author", "Description"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book11, "Title", "Author", "Description", "H"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book12, "Title", "Author", "Description", "H"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book13, "Title", "Author", "Description", "H"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book14, "Title", "Author", "Description", "H"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book15, "Title", "Author", "Description", "H"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book16, "Title", "Author", "Description", "H"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book17, "Title", "Author", "Description", "H"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book18, "Title", "Author", "Description", "H"));
+        recentlyWatchedList.add(new ChildModelClass(R.drawable.book19, "Title", "Author", "Description", "H"));
 
         parentModelClassArrayList.add(new ParentModelClass("Recently Read", recentlyWatchedList));
 
         // Add items to favouriteList
-        favouriteList.add(new ChildModelClass(R.drawable.book1, "Title", "Author", "Description"));
-        favouriteList.add(new ChildModelClass(R.drawable.book2, "Title", "Author", "Description"));
-        favouriteList.add(new ChildModelClass(R.drawable.book3, "Title", "Author", "Description"));
-        favouriteList.add(new ChildModelClass(R.drawable.book4, "Title", "Author", "Description"));
-        favouriteList.add(new ChildModelClass(R.drawable.book5, "Title", "Author", "Description"));
-        favouriteList.add(new ChildModelClass(R.drawable.book6, "Title", "Author", "Description"));
-        favouriteList.add(new ChildModelClass(R.drawable.book7, "Title", "Author", "Description"));
-        favouriteList.add(new ChildModelClass(R.drawable.book8, "Title", "Author", "Description"));
-        favouriteList.add(new ChildModelClass(R.drawable.book9, "Title", "Author", "Description"));
+        favouriteList.add(new ChildModelClass(R.drawable.book21, "Title", "Author", "Description", "H"));
+        favouriteList.add(new ChildModelClass(R.drawable.book22, "Title", "Author", "Description", "H"));
+        favouriteList.add(new ChildModelClass(R.drawable.book23, "Title", "Author", "Description", "H"));
+        favouriteList.add(new ChildModelClass(R.drawable.book24, "Title", "Author", "Description", "H"));
+        favouriteList.add(new ChildModelClass(R.drawable.book25, "Title", "Author", "Description", "H"));
+        favouriteList.add(new ChildModelClass(R.drawable.book26, "Title", "Author", "Description", "H"));
+        favouriteList.add(new ChildModelClass(R.drawable.book27, "Title", "Author", "Description", "H"));
+        favouriteList.add(new ChildModelClass(R.drawable.book28, "Title", "Author", "Description", "H"));
+        favouriteList.add(new ChildModelClass(R.drawable.book29, "Title", "Author", "Description", "H"));
 
         parentModelClassArrayList.add(new ParentModelClass("Favorites", favouriteList));
 
         // Add items to childModelClassArrayList
         childModelClassArrayList.clear();
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book1, "Title", "Author", "Description"));
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book2, "Title", "Author", "Description"));
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book3, "Title", "Author", "Description"));
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book4, "Title", "Author", "Description"));
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book5, "Title", "Author", "Description"));
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book6, "Title", "Author", "Description"));
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book7, "Title", "Author", "Description"));
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book8, "Title", "Author", "Description"));
-        childModelClassArrayList.add(new ChildModelClass(R.drawable.book9, "Title", "Author", "Description"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book30, "Title", "Author", "Description", "H"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book21, "Title", "Author", "Description", "R"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book13, "Title", "Author", "Description", "D"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book4, "Title", "Author", "Description", "A"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book25, "Title", "Author", "Description", "Y"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book6, "Title", "Author", "Description", "T"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book17, "Title", "Author", "Description", "K"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book8, "Title", "Author", "Description", "Q"));
+        childModelClassArrayList.add(new ChildModelClass(R.drawable.book9, "Title", "Author", "Description", "P"));
 
-        parentModelClassArrayList.add(new ParentModelClass("Fine", childModelClassArrayList));
-        parentModelClassArrayList.add(new ParentModelClass("Recently", childModelClassArrayList));
-        parentModelClassArrayList.add(new ParentModelClass("Great", childModelClassArrayList));
+        parentModelClassArrayList.add(new ParentModelClass("Recommended", childModelClassArrayList));
+//        parentModelClassArrayList.add(new ParentModelClass("Recently", childModelClassArrayList));
+//        parentModelClassArrayList.add(new ParentModelClass("Great", childModelClassArrayList));
 
 
         // Set up the adapter

@@ -5,12 +5,14 @@ public class ChildModelClass {
     private String title;
     private String author;
     private String description;
+    private String category;
 
-    public ChildModelClass(int image, String title, String author,String description) {
+    public ChildModelClass(int image, String title, String author,String description, String category) {
         this.image = image;
         this.title = title;
         this.author = author;
         this.description = description;
+        this.category = category;
     }
 
     public int getImage() {
@@ -39,6 +41,13 @@ public class ChildModelClass {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
 

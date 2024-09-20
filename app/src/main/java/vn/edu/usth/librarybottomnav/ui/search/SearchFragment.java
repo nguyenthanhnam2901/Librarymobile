@@ -71,14 +71,37 @@ public class SearchFragment extends Fragment {
     private void performSearch(String query) {
         searchResultsList.clear();
 
-        if (query.isEmpty()) {
-            // Show all books when query is empty
+        // Split the query into parts by the "#" symbol
+        String[] queryParts = query.split("#");
+
+        // Initialize variables to store the parts of the query
+        String titleQuery = "";
+        String authorQuery = "";
+        String categoryQuery = "";
+
+        // Assign each part to the corresponding variable if it exists
+        if (queryParts.length > 0) {
+            titleQuery = queryParts[0].trim().toLowerCase();
+        }
+        if (queryParts.length > 1) {
+            authorQuery = queryParts[1].trim().toLowerCase();
+        }
+        if (queryParts.length > 2) {
+            categoryQuery = queryParts[2].trim().toLowerCase();
+        }
+
+        // If the query is empty, show all books
+        if (titleQuery.isEmpty() && authorQuery.isEmpty() && categoryQuery.isEmpty()) {
             searchResultsList.addAll(allBooksList);
         } else {
-            // Filter books based on the query
+            // Filter books based on the title, author, and category
             for (ChildModelClass book : allBooksList) {
-                if (book.getTitle().toLowerCase().contains(query.toLowerCase()) ||
-                        book.getAuthor().toLowerCase().contains(query.toLowerCase())) {
+                boolean matchesTitle = titleQuery.isEmpty() || book.getTitle().toLowerCase().contains(titleQuery);
+                boolean matchesAuthor = authorQuery.isEmpty() || book.getAuthor().toLowerCase().contains(authorQuery);
+                boolean matchesCategory = categoryQuery.isEmpty() || book.getCategory().toLowerCase().contains(categoryQuery);
+
+                // Add book to the results if it matches all the non-empty query parts
+                if (matchesTitle && matchesAuthor && matchesCategory) {
                     searchResultsList.add(book);
                 }
             }
@@ -90,16 +113,21 @@ public class SearchFragment extends Fragment {
         parentAdapterVertical.notifyDataSetChanged();
     }
 
+
     private void setupInitialData() {
         // Add initial books to the list
-        allBooksList.add(new ChildModelClass(R.drawable.book3, "Spice and Wolf", "Isuna Hasekura", "This is Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book9, "Konosuba", "Natsume Akatsuki", "This is Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book5, "That time I got Reincarnated as a Slime", "Fuse", "This is Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book6, "Monogatari", "Nishioishin", "This is Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book7, "Wandering Witch", "Jougi Shiraishi", "This is Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book8, "Mushoku Tensei", "Rifujin na Magonote", "This is Description"));
+        allBooksList.add(new ChildModelClass(R.drawable.book3, "book3", "A", "Description", "L"));
+        allBooksList.add(new ChildModelClass(R.drawable.book9, "book9", "B", "Description", "Q"));
+        allBooksList.add(new ChildModelClass(R.drawable.book5, "book5", "C", "Description", "J"));
+        allBooksList.add(new ChildModelClass(R.drawable.book6, "book6", "D", "Description", "H"));
+        allBooksList.add(new ChildModelClass(R.drawable.book7, "book7", "E", "Description", "G"));
+        allBooksList.add(new ChildModelClass(R.drawable.book8, "book8", "F", "Description", "R"));
+        allBooksList.add(new ChildModelClass(R.drawable.book1, "book1", "G", "Description", "I"));
+        allBooksList.add(new ChildModelClass(R.drawable.book19, "book19", "H", "Description", "Y"));
+        allBooksList.add(new ChildModelClass(R.drawable.book2, "book2", "J", "Description", "A"));
+        allBooksList.add(new ChildModelClass(R.drawable.book18, "book18", "K", "Description", "B"));
+        allBooksList.add(new ChildModelClass(R.drawable.book11, "book11", "L", "Description", "C"));
 
         parentModelClassArrayList.add(new ParentModelClass("", allBooksList));
-
     }
 }

@@ -17,6 +17,8 @@ public class BookDetail extends AppCompatActivity {
     TextView tv1;
     TextView tv2;
     TextView tv3;
+    TextView tv4;
+
     Button button1, button2, button3;
 
     @Override
@@ -29,31 +31,38 @@ public class BookDetail extends AppCompatActivity {
         tv1 =findViewById(R.id.tv1);
         tv2 =findViewById(R.id.tv2);
         tv3 =findViewById(R.id.tv3);
+        tv4 =findViewById(R.id.tv4);
 
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
 
         Intent intent = getIntent();
+        String category = intent.getExtras().getString("category");
         String description = intent.getExtras().getString("description");
         String author = intent.getExtras().getString("author");
         String title = intent.getExtras().getString("title");
+
         int image = intent.getExtras().getInt("image");
+
         img.setImageResource(image);
+
         tv1.setText(title);
         tv2.setText(author);
         tv3.setText(description);
+        tv4.setText(category);
+
 
         button1.setOnClickListener(v ->
-                Toast.makeText(BookDetail.this, "Button 1 clicked!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(BookDetail.this, "Button Read clicked!", Toast.LENGTH_SHORT).show()
         );
 
         button2.setOnClickListener(v ->
-                Toast.makeText(BookDetail.this, "Button 2 clicked!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(BookDetail.this, "Button Follow clicked!", Toast.LENGTH_SHORT).show()
         );
 
         button3.setOnClickListener(v ->
-                Toast.makeText(BookDetail.this, "Button 3 clicked!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(BookDetail.this, "Button Plan to read clicked!", Toast.LENGTH_SHORT).show()
         );
 
     }

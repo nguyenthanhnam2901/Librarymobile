@@ -52,7 +52,10 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
         holder.tv_title.setText(currentItem.getTitle());
         holder.tv_author.setText(currentItem.getAuthor());
         holder.tv_description.setText(currentItem.getDescription());
-                                                holder.cv_child_item.setOnClickListener(new View.OnClickListener() {
+        holder.tv_category.setText(currentItem.getCategory());
+
+        holder.cv_child_item.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, BookDetail.class);
@@ -60,6 +63,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
                 intent.putExtra("title",childModelClassList.get(position).getTitle());
                 intent.putExtra("author",childModelClassList.get(position).getAuthor());
                 intent.putExtra("description",childModelClassList.get(position).getDescription());
+                intent.putExtra("category",childModelClassList.get(position).getCategory());
                 context.startActivity(intent);
             }
 
@@ -74,7 +78,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView iv_child_image;
-        TextView tv_title, tv_author, tv_description;
+        TextView tv_title, tv_author, tv_description, tv_category;
         LinearLayout cv_child_item;
 
         public ViewHolder(@NonNull View itemView) {
@@ -83,6 +87,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
             tv_title = itemView.findViewById(R.id.tv_child_title);
             tv_author = itemView.findViewById(R.id.tv_child_author);
             tv_description = itemView.findViewById(R.id.tv_child_description);
+            tv_category = itemView.findViewById(R.id.tv_child_category);
             cv_child_item =itemView.findViewById(R.id.cv_child_item);
         }
     }

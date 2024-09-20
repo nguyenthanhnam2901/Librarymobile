@@ -33,16 +33,16 @@ public class tab1Fragment extends Fragment {
 
             // Add items to latestList
 
-            Book.add(new ChildModelClass(R.drawable.book1, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book2, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book3, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book4, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book5, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book6, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book7, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book8, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book9, "Title", "Author", "Page x"));
-            Book.add(new ChildModelClass(R.drawable.book10, "Title", "Author", "Page x"));
+            Book.add(new ChildModelClass(R.drawable.book1, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book2, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book3, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book4, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book5, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book6, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book7, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book8, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book9, "Title", "Author", "Page x", "X"));
+            Book.add(new ChildModelClass(R.drawable.book10, "Title", "Author", "Page x", "X"));
 
 
             parentModelClassArrayList.add(new ParentModelClass("", Book));
