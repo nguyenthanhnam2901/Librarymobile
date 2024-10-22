@@ -9,7 +9,8 @@
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="Search..."/>
+        android:queryHint="Title#Author#Category"
+        android:iconifiedByDefault="false" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_results_recycler_view"

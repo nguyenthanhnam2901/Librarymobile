@@ -38,6 +38,10 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         searchView = view.findViewById(R.id.search_view);
+
+        searchView.setIconifiedByDefault(false);
+        searchView.setQueryHint("Title#Author#Category");
+
         recyclerView = view.findViewById(R.id.search_results_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
