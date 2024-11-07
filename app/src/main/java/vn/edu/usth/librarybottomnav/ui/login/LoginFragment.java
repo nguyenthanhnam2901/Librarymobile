@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import vn.edu.usth.librarybottomnav.R;
 
-public class loginFragment extends Fragment {
+public class LoginFragment extends Fragment {
 
     EditText username;
     EditText password;

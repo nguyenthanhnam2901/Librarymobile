@@ -3,11 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigation_login"
-        android:icon="@drawable/ic_settings_black_24"
-        android:title="log in" />
-
-    <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24"
         android:title="@string/title_home" />

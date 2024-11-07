@@ -1,256 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".ui.user.UserFragment"
-    android:orientation="vertical"
-    android:layout_marginBottom="60dp" >
+    android:layout_marginBottom="60dp"
+    android:id="@+id/fragment_user">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"> <!-- Set a valid background -->
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/profile_background"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-
-            android:src="@drawable/book3"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-
-            app:layout_constraintBottom_toTopOf="@+id/user_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/user_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:text="@string/sample"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardview" /> <!-- Changed to @id/cardview -->
-
-        <TextView
-            android:id="@+id/user_detail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:text="@string/sample"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/user_name" /> <!-- Changed to @id/user_name -->
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:cardCornerRadius="100dp"
-
-            app:cardElevation="4dp"
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/profile"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/book1" />
-
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:background="@android:color/transparent"> <!-- Set a valid background -->
 
-            android:background="@color/white">
+            <ImageView
+                android:id="@+id/profile_background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                android:src="@drawable/book3"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+
+                app:layout_constraintBottom_toTopOf="@+id/user_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+
+                android:background="@color/accent"
+                android:textColor="@color/text"
+                android:textSize="30sp"
+                android:text="@string/sample"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardview" /> <!-- Changed to @id/cardview -->
+
+            <TextView
+                android:id="@+id/user_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+
+                android:background="@color/accent"
+                android:textColor="@color/text"
+                android:textSize="25sp"
+                android:text="@string/sample"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_name" /> <!-- Changed to @id/user_name -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
-
-            <Button
-                android:id="@+id/account"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                app:cardCornerRadius="100dp"
 
-                android:drawableStart="@drawable/ic_account_circle_black_24"
+                app:cardElevation="4dp"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                android:text=" Account" />
+                <ImageView
+                    android:id="@+id/profile"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/book1" />
 
-            <Button
-                android:id="@+id/notification"
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:orientation="vertical"
 
-                android:drawableStart="@drawable/ic_notifications_black_24"
+                android:background="@color/background">
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
+                <Button
+                    android:id="@+id/account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:drawableStart="@drawable/ic_account_circle_black_24"
 
-                android:text=" Notification" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" Account" />
 
-            <Button
-                android:id="@+id/summit_work"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                <Button
+                    android:id="@+id/notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
 
-                android:drawableLeft="@drawable/ic_add_box_black_24"
+                    android:drawableStart="@drawable/ic_notifications_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
 
-                android:text=" Summit work" />
+                    android:text=" Notification" />
+
+                <Button
+                    android:id="@+id/summit_work"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+
+                    android:drawableLeft="@drawable/ic_add_box_black_24"
+
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+
+                    android:text=" Summit work" />
 
 
-            <Button
-                android:id="@+id/your_work"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                <Button
+                    android:id="@+id/your_work"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
 
-                android:drawableLeft="@drawable/ic_library_books_black_24"
+                    android:drawableLeft="@drawable/ic_library_books_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
-                android:text=" Your work" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" Your work" />
 
 
-            <Button
-                android:id="@+id/following_author"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                <Button
+                    android:id="@+id/following_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
 
-                android:drawableLeft="@drawable/ic_account_box_black_24"
+                    android:drawableLeft="@drawable/ic_account_box_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
-                android:text=" Following author" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" Following author" />
 
-            <Button
-                android:id="@+id/follower"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                <Button
+                    android:id="@+id/follower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
 
-                android:drawableLeft="@drawable/ic_account_box_black_24"
+                    android:drawableLeft="@drawable/ic_account_box_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
-                android:text=" Follower" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" Follower" />
 
-            <Button
-                android:id="@+id/history"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                <Button
+                    android:id="@+id/history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
 
-                android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="20dp"
 
-                android:drawableLeft="@drawable/ic_history_black_24"
+                    android:drawableLeft="@drawable/ic_history_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
-                android:text=" History" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" History" />
 
-            <Button
-                android:id="@+id/info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                <Button
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
 
-                android:drawableLeft="@drawable/ic_info_black_24"
+                    android:drawableLeft="@drawable/ic_info_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
-                android:text=" About this app" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" About this app" />
 
-            <Button
-                android:id="@+id/helpandfeedback"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                <Button
+                    android:id="@+id/helpandfeedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
 
-                android:drawableLeft="@drawable/ic_help_black_24"
+                    android:drawableLeft="@drawable/ic_help_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
-                android:text=" Help and Feedback" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" Help and Feedback" />
 
-            <Button
-                android:id="@+id/setting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                <Button
+                    android:id="@+id/setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
 
-                android:drawableLeft="@drawable/ic_settings_black_24"
+                    android:drawableLeft="@drawable/ic_settings_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
-                android:text=" Setting" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" Setting" />
 
-            <Button
-                android:id="@+id/mute_setting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                <Button
+                    android:id="@+id/mute_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
 
-                android:drawableLeft="@drawable/ic_settings_black_24"
+                    android:drawableLeft="@drawable/ic_settings_black_24"
 
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textAllCaps="false"
-                android:text=" Mute setting" />
+                    android:backgroundTint="@color/title_background"
+                    android:drawableTint="@color/text"
+                    android:textColor="@color/text"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" Mute setting" />
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </ScrollView>
+        </ScrollView>
 
-</LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>
+
