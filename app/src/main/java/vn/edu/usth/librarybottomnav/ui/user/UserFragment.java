@@ -1,5 +1,6 @@
 package vn.edu.usth.librarybottomnav.ui.user;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import vn.edu.usth.librarybottomnav.R;
 import vn.edu.usth.librarybottomnav.databinding.FragmentUserBinding;
-import vn.edu.usth.librarybottomnav.ui.login.LoginFragment;
+import vn.edu.usth.librarybottomnav.ui.login.LoginActivity;
 
 public class UserFragment extends Fragment {
 
@@ -26,17 +27,16 @@ public class UserFragment extends Fragment {
 
         // Set OnClickListener for each button
         binding.account.setOnClickListener(view -> {
-            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            // Create an Intent to launch LoginActivity
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
 
-            transaction.setCustomAnimations(
-                    android.R.anim.fade_in,   // Animation when the fragment is entered
-                    android.R.anim.fade_out   // Animation when the fragment is exited
-            );
+            // Optional: Set a transition animation
+            getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
-            transaction.replace(R.id.fragment_user, new LoginFragment());
-            transaction.addToBackStack(null);
-            transaction.commit();
+            // Start the activity
+            startActivity(intent);
         });
+
 
 
 
