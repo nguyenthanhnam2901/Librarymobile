@@ -25,15 +25,11 @@ public class UserFragment extends Fragment {
         binding = FragmentUserBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // Set OnClickListener for each button
         binding.account.setOnClickListener(view -> {
-            // Create an Intent to launch LoginActivity
             Intent intent = new Intent(getActivity(), LoginActivity.class);
 
-            // Optional: Set a transition animation
             getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
-            // Start the activity
             startActivity(intent);
         });
 
