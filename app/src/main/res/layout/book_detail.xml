@@ -38,7 +38,7 @@
 
             android:textStyle="normal"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/text"
 
             android:layout_below="@+id/img"
             android:layout_centerInParent="true"
@@ -58,7 +58,7 @@
 
             android:textStyle="normal"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/text"
 
             android:layout_below="@+id/tv1"
             android:layout_centerInParent="true"
@@ -78,7 +78,7 @@
 
             android:textStyle="normal"
             android:textSize="15sp"
-            android:textColor="@color/black"
+            android:textColor="@color/text"
 
             android:layout_below="@+id/tv2"
             android:layout_centerInParent="true"
@@ -98,7 +98,7 @@
 
             android:textStyle="normal"
             android:textSize="15sp"
-            android:textColor="@color/black"
+            android:textColor="@color/text"
 
             android:layout_below="@+id/tv3"
             android:layout_centerInParent="true"
@@ -126,6 +126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:textColor="@color/text"
                     android:text="Read"
                     android:onClick="Effect1" />
 
@@ -134,6 +135,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:textColor="@color/text"
                     android:text="Follow"
                     android:onClick="Effect2" />
 
@@ -142,6 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:textColor="@color/text"
                     android:text="Plan to read"
                     android:onClick="Effect3" />
 

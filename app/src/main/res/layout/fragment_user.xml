@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
 
-                android:background="@color/accent"
+                android:background="@color/title_background"
                 android:textColor="@color/text"
                 android:textSize="30sp"
                 android:text="@string/sample"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
 
-                android:background="@color/accent"
+                android:background="@color/title_background"
                 android:textColor="@color/text"
                 android:textSize="25sp"
                 android:text="@string/sample"
