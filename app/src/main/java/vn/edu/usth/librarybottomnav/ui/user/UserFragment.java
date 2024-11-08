@@ -9,11 +9,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import vn.edu.usth.librarybottomnav.R;
 import vn.edu.usth.librarybottomnav.databinding.FragmentUserBinding;
-import vn.edu.usth.librarybottomnav.ui.login.LoginActivity;
+import vn.edu.usth.librarybottomnav.ui.user.account.LoginActivity;
+import vn.edu.usth.librarybottomnav.ui.user.setting.SettingActivity;
 
 public class UserFragment extends Fragment {
 
@@ -33,9 +32,6 @@ public class UserFragment extends Fragment {
             startActivity(intent);
         });
 
-
-
-
         binding.notification.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Notification clicked", Toast.LENGTH_SHORT).show();
         });
@@ -51,7 +47,6 @@ public class UserFragment extends Fragment {
         binding.followingAuthor.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Following Author clicked", Toast.LENGTH_SHORT).show();
         });
-
 
         binding.follower.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Follower clicked", Toast.LENGTH_SHORT).show();
@@ -70,14 +65,21 @@ public class UserFragment extends Fragment {
             Toast.makeText(getContext(), "Help and Feedback clicked", Toast.LENGTH_SHORT).show();
         });
 
+//        binding.setting.setOnClickListener(view -> {
+//            Toast.makeText(getContext(), "Setting clicked", Toast.LENGTH_SHORT).show();
+//        });
+
         binding.setting.setOnClickListener(view -> {
-            Toast.makeText(getContext(), "Setting clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), SettingActivity.class);
+
+            getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+            startActivity(intent);
         });
 
         binding.muteSetting.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Mute setting clicked", Toast.LENGTH_SHORT).show();
         });
-
 
         return root;
     }

@@ -1,4 +1,4 @@
-package vn.edu.usth.librarybottomnav.ui.login;
+package vn.edu.usth.librarybottomnav.ui.user.account;
 
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
 
-        // Set onClickListener for the login button
+        // Set onClickListener for the account button
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
