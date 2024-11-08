@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import vn.edu.usth.librarybottomnav.R;
+import vn.edu.usth.librarybottomnav.ReadBookActivity;
 import vn.edu.usth.librarybottomnav.ui.BookDetail;
 
 public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> {
@@ -84,4 +85,11 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
             cv_child_item = itemView.findViewById(R.id.cv_child_item);
         }
     }
+
+    public void onBookClick(int bookId) {
+        Intent intent = new Intent(context, ReadBookActivity.class);
+        intent.putExtra("id", bookId);  // Pass the book ID to ReadBookActivity
+        context.startActivity(intent);
+    }
+
 }

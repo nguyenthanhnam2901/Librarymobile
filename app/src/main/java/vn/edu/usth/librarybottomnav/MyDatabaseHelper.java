@@ -300,25 +300,30 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return categoryName;
     }
 
-    public Cursor getBookDetailsById(int bookId) {
+    public Book getBookById(int bookId) {
         SQLiteDatabase db = this.getReadableDatabase();
-        // Define the columns you want to fetch
-        String[] columns = {
-                TB_book_id,
-                TB_book_title,
-                TB_book_content,
-                TB_book_author_id,
-                TB_book_category_id
-        };
+        String query = "SELECT * FROM " + TB_book + " WHERE " + TB_book_id + " = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(bookId)});
 
-        // Define the WHERE clause (book_id = ?)
-        String selection = TB_book_id + " = ?";
-        String[] selectionArgs = {String.valueOf(bookId)};
+        Book book = null;
+        if (cursor.moveToFirst()) {
+            String title = cursor.getString(cursor.getColumnIndexOrThrow(TB_book_title));
+            String content = cursor.getString(cursor.getColumnIndexOrThrow(TB_book_content));
+            int categoryId = cursor.getInt(cursor.getColumnIndexOrThrow(TB_book_category_id));
+            int authorId = cursor.getInt(cursor.getColumnIndexOrThrow(TB_book_author_id));
 
-        // Query the database
-        return db.query(TB_book, columns, selection, selectionArgs, null, null, null);
+            // Get the author and category names
+            String author = getAuthorName(authorId);
+            String category = getCategoryName(categoryId);
+
+            // Create Book object
+            book = new Book(bookId, title, content, category, author);
+        }
+        cursor.close();
+        db.close();
+        return book;
     }
-
 }
+
 
 
