@@ -43,7 +43,7 @@
                 android:background="@drawable/custom_edittext"
 
                 android:drawablePadding="8dp"
-                android:hint="@string/username_or_email"
+                android:hint="Username"
                 android:padding="8dp"
                 android:textColor="@color/text"
                 android:textColorHighlight="@color/cardview_dark_background"

@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import vn.edu.usth.librarybottomnav.R;
-import vn.edu.usth.librarybottomnav.ReadBookActivity;
 
 public class BookDetail extends AppCompatActivity {
     private ImageView img;
@@ -51,7 +50,6 @@ public class BookDetail extends AppCompatActivity {
 
         Bundle extras = intent.getExtras();
         if (extras != null) {
-
             String title = extras.getString("title", "Unknown Title");
             String author = extras.getString("author", "Unknown Author");
             String category = extras.getString("category", "Uncategorized");
@@ -69,7 +67,7 @@ public class BookDetail extends AppCompatActivity {
         // Set button click listeners
         buttonRead.setOnClickListener(v -> {
             Intent readBookIntent = new Intent(BookDetail.this, ReadBookActivity.class);
-            readBookIntent.putExtra("bookId","id");
+            readBookIntent.putExtra("book_id", "id");
             startActivity(readBookIntent);
         });
 
