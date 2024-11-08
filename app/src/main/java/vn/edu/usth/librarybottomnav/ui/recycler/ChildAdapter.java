@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import vn.edu.usth.librarybottomnav.R;
-import vn.edu.usth.librarybottomnav.ui.home.BookDetail;
+import vn.edu.usth.librarybottomnav.ui.BookDetail;
 
 public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> {
 
@@ -49,14 +49,19 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
         holder.tv_title.setText(currentItem.getTitle());
         holder.tv_author.setText(currentItem.getAuthor());
         holder.tv_category.setText(currentItem.getCategory());
+        holder.tv_description.setText(currentItem.getDescription()); // Add description if necessary
 
         holder.cv_child_item.setOnClickListener(view -> {
-            // Pass the book_id (using the new getId() method)
             Intent intent = new Intent(context, BookDetail.class);
-            intent.putExtra("book_id", currentItem.getId());  // Pass the book_id from the ChildModelClass
+            intent.putExtra("image", currentItem.getImage());
+            intent.putExtra("title", currentItem.getTitle());
+            intent.putExtra("author", currentItem.getAuthor());
+            intent.putExtra("description", currentItem.getDescription()); // Add if required
+            intent.putExtra("category", currentItem.getCategory());
             context.startActivity(intent);
         });
     }
+
 
     @Override
     public int getItemCount() {
@@ -66,7 +71,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView iv_child_image;
-        TextView tv_title, tv_author, tv_category;
+        TextView tv_title, tv_author, tv_category, tv_description;
         View cv_child_item;
 
         public ViewHolder(@NonNull View itemView) {
@@ -75,6 +80,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
             tv_title = itemView.findViewById(R.id.tv_child_title);
             tv_author = itemView.findViewById(R.id.tv_child_author);
             tv_category = itemView.findViewById(R.id.tv_child_category);
+            tv_description = itemView.findViewById(R.id.tv_child_description);
             cv_child_item = itemView.findViewById(R.id.cv_child_item);
         }
     }

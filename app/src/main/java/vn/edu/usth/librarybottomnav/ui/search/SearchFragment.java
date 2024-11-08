@@ -75,22 +75,29 @@ public class SearchFragment extends Fragment {
     }
 
     private void performSearch(String query) {
+        if (getContext() == null) return; // Avoid NullPointerException
+
         MyDatabaseHelper dbHelper = new MyDatabaseHelper(getContext());
 
-        // Split the query into title, author, and category
+        // Parse the query
         String[] queryParts = query.split("#");
-        String titleQuery = queryParts.length > 0 ? queryParts[0].trim() : "";
-        String authorQuery = queryParts.length > 1 ? queryParts[1].trim() : "";
-        String categoryQuery = queryParts.length > 2 ? queryParts[2].trim() : "";
+        String titleQuery = queryParts.length > 0 ? queryParts[0].trim().toLowerCase() : "";
+        String authorQuery = queryParts.length > 1 ? queryParts[1].trim().toLowerCase() : "";
+        String categoryQuery = queryParts.length > 2 ? queryParts[2].trim().toLowerCase() : "";
 
-        // Get search results from database
+        // Retrieve filtered results from the database
         searchResultsList = dbHelper.searchBooks(titleQuery, authorQuery, categoryQuery);
 
-        // Update RecyclerView with new results
+        // If no results found, you might want to add an empty list or show a "No results" message
         parentModelClassArrayList.clear();
-        parentModelClassArrayList.add(new ParentModelClass("Search Results", searchResultsList));
+        if (searchResultsList.isEmpty()) {
+            parentModelClassArrayList.add(new ParentModelClass("No Results Found", new ArrayList<>()));
+        } else {
+            parentModelClassArrayList.add(new ParentModelClass("Search Results", searchResultsList));
+        }
         parentAdapterVertical.notifyDataSetChanged();
     }
+
 
 
 

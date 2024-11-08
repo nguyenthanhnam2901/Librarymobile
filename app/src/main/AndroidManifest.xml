@@ -22,7 +22,7 @@
             android:name=".ui.user.login.Register"
             android:exported="false" />
         <activity
-            android:name=".ui.home.BookDetail"
+            android:name=".ui.BookDetail"
             android:exported="false" />
         <activity
             android:name=".ui.user.login.LoginActivity"
