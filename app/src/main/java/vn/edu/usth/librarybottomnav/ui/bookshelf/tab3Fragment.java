@@ -32,16 +32,16 @@ public class tab3Fragment extends Fragment {
         ParentAdapterVertical parentAdapterVertical;
 
         // Add items to latestList
-        Book.add(new ChildModelClass(R.drawable.book11, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book12, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book13, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book14, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book15, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book16, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book17, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book18, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book19, "Title", "Author", "Description", "X"));
-        Book.add(new ChildModelClass(R.drawable.book20, "Title", "Author", "Description", "X"));
+        Book.add(new ChildModelClass(R.drawable.book1, 1, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book2, 2, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book3, 3, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book4, 4, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book5, 5, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book6, 6, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book7, 7, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book8, 8, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book9, 9, "Title", "Author", "Page x", "X", "Description"));
+        Book.add(new ChildModelClass(R.drawable.book10, 10, "Title", "Author", "Page x", "X", "Description"));
 
         parentModelClassArrayList.add(new ParentModelClass("", Book));
 

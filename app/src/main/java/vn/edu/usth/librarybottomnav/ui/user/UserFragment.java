@@ -11,8 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import vn.edu.usth.librarybottomnav.databinding.FragmentUserBinding;
-import vn.edu.usth.librarybottomnav.ui.user.account.LoginActivity;
-import vn.edu.usth.librarybottomnav.ui.user.setting.SettingActivity;
+import vn.edu.usth.librarybottomnav.ui.user.login.LoginActivity;
 
 public class UserFragment extends Fragment {
 
@@ -32,12 +31,16 @@ public class UserFragment extends Fragment {
             startActivity(intent);
         });
 
+
+
+
         binding.notification.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Notification clicked", Toast.LENGTH_SHORT).show();
         });
 
         binding.summitWork.setOnClickListener(view -> {
-            Toast.makeText(getContext(), "Summit Work clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getContext(), vn.edu.usth.librarybottomnav.ui.AddBookActivity.class);
+            startActivity(intent);
         });
 
         binding.yourWork.setOnClickListener(view -> {
@@ -47,6 +50,7 @@ public class UserFragment extends Fragment {
         binding.followingAuthor.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Following Author clicked", Toast.LENGTH_SHORT).show();
         });
+
 
         binding.follower.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Follower clicked", Toast.LENGTH_SHORT).show();
@@ -65,21 +69,14 @@ public class UserFragment extends Fragment {
             Toast.makeText(getContext(), "Help and Feedback clicked", Toast.LENGTH_SHORT).show();
         });
 
-//        binding.setting.setOnClickListener(view -> {
-//            Toast.makeText(getContext(), "Setting clicked", Toast.LENGTH_SHORT).show();
-//        });
-
         binding.setting.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), SettingActivity.class);
-
-            getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
-            startActivity(intent);
+            Toast.makeText(getContext(), "Setting clicked", Toast.LENGTH_SHORT).show();
         });
 
         binding.muteSetting.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Mute setting clicked", Toast.LENGTH_SHORT).show();
         });
+
 
         return root;
     }

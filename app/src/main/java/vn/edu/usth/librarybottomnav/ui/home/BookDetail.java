@@ -7,63 +7,50 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import vn.edu.usth.librarybottomnav.R;
+import vn.edu.usth.librarybottomnav.ui.ReadBookActivity;
 
 public class BookDetail extends AppCompatActivity {
-    ImageView img;
-    TextView tv1;
-    TextView tv2;
-    TextView tv3;
-    TextView tv4;
-
-    Button button1, button2, button3;
+    private ImageView img;
+    private TextView tvTitle, tvAuthor, tvDescription, tvCategory;
+    private Button buttonRead, buttonFollow, buttonPlanToRead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.book_detail);
 
-        img =findViewById(R.id.img);
-        tv1 =findViewById(R.id.tv1);
-        tv2 =findViewById(R.id.tv2);
-        tv3 =findViewById(R.id.tv3);
-        tv4 =findViewById(R.id.tv4);
+        // Initialize views
+        img = findViewById(R.id.img);
+        tvTitle = findViewById(R.id.tv1);
+        tvAuthor = findViewById(R.id.tv2);
+        tvDescription = findViewById(R.id.tv3);
+        tvCategory = findViewById(R.id.tv4);
+        buttonRead = findViewById(R.id.button1);
+        buttonFollow = findViewById(R.id.button2);
+        buttonPlanToRead = findViewById(R.id.button3);
 
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-
+        // Retrieve intent data
         Intent intent = getIntent();
-        String category = intent.getExtras().getString("category");
-        String description = intent.getExtras().getString("description");
-        String author = intent.getExtras().getString("author");
-        String title = intent.getExtras().getString("title");
+        if (intent != null) {
+            tvTitle.setText(intent.getStringExtra("title"));
+            tvAuthor.setText(intent.getStringExtra("author"));
+            tvCategory.setText(intent.getStringExtra("category"));
+            int imageResId = intent.getIntExtra("image", R.drawable.book1);
+            img.setImageResource(imageResId);
+        }
 
-        int image = intent.getExtras().getInt("image");
-
-        img.setImageResource(image);
-
-        tv1.setText(title);
-        tv2.setText(author);
-        tv3.setText(description);
-        tv4.setText(category);
+        // Set button click listeners
+        buttonRead.setOnClickListener(v -> {
+            Intent readBookIntent = new Intent(BookDetail.this, ReadBookActivity.class);
+            readBookIntent.putExtra("book_id", "id");
+            startActivity(readBookIntent);
+        });
 
 
-        button1.setOnClickListener(v ->
-                Toast.makeText(BookDetail.this, "Button Read clicked!", Toast.LENGTH_SHORT).show()
-        );
-
-        button2.setOnClickListener(v ->
-                Toast.makeText(BookDetail.this, "Button Follow clicked!", Toast.LENGTH_SHORT).show()
-        );
-
-        button3.setOnClickListener(v ->
-                Toast.makeText(BookDetail.this, "Button Plan to read clicked!", Toast.LENGTH_SHORT).show()
-        );
-
+        buttonFollow.setOnClickListener(v -> Toast.makeText(this, "Follow clicked!", Toast.LENGTH_SHORT).show());
+        buttonPlanToRead.setOnClickListener(v -> Toast.makeText(this, "Plan to read clicked!", Toast.LENGTH_SHORT).show());
     }
 }

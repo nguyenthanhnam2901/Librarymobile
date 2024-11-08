@@ -10,7 +10,7 @@ lifecycleLivedataKtx = "2.8.5"
 lifecycleViewmodelKtx = "2.8.5"
 navigationFragment = "2.8.0"
 navigationUi = "2.8.0"
-activity = "1.9.2"
+activity = "1.9.3"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }

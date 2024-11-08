@@ -1,157 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.BookDetail"
+    android:paddingTop="20dp"
+    android:padding="16dp">
 
-    android:paddingTop="100dp"
-
-    android:id="@+id/main">
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
         <ImageView
             android:id="@+id/img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:maxHeight="200dp"
-            android:maxWidth="150dp"
-            android:adjustViewBounds="true"
-
-            android:layout_alignParentTop="true"
-            android:layout_centerInParent="true"
-
-            android:scaleType="centerInside"
-            android:src="@drawable/book1"/>
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/book1" />
 
         <TextView
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-
-            android:textStyle="normal"
+            android:layout_marginTop="16dp"
             android:textSize="20sp"
             android:textColor="@color/text"
-
-            android:layout_below="@+id/img"
-            android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-
-            android:gravity="center"
-
-            android:text="@string/sample"
-            />
+            android:text="Book Title" />
 
         <TextView
             android:id="@+id/tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-
-            android:textStyle="normal"
-            android:textSize="20sp"
-            android:textColor="@color/text"
-
-            android:layout_below="@+id/tv1"
-            android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-
-            android:gravity="center"
-
-            android:text="@string/sample"
-            />
-
-        <TextView
-            android:id="@+id/tv3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-
-            android:textStyle="normal"
-            android:textSize="15sp"
-            android:textColor="@color/text"
-
-            android:layout_below="@+id/tv2"
-            android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-
-            android:gravity="center|fill"
-
-            android:text="@string/sample"
-            />
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="Author Name" />
 
         <TextView
             android:id="@+id/tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Category" />
 
-            android:textStyle="normal"
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:textSize="15sp"
             android:textColor="@color/text"
-
-            android:layout_below="@+id/tv3"
-            android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-
-            android:gravity="center|fill"
-
-            android:text="@string/sample"
-            />
+            android:text="Description of the book goes here."
+            android:padding="10dp" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv4">
+            android:layout_marginTop="20dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_gravity="center" >
+                android:gravity="center_horizontal">
 
                 <Button
                     android:id="@+id/button1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/text"
-                    android:text="Read"
-                    android:onClick="Effect1" />
+                    android:layout_margin="8dp"
+                    android:text="Read" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/text"
-                    android:text="Follow"
-                    android:onClick="Effect2" />
+                    android:layout_margin="8dp"
+                    android:text="Follow" />
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/text"
-                    android:text="Plan to read"
-                    android:onClick="Effect3" />
-
+                    android:layout_margin="8dp"
+                    android:text="Plan to Read" />
             </LinearLayout>
-
         </FrameLayout>
-
-    </RelativeLayout>
-
+    </LinearLayout>
 </ScrollView>
