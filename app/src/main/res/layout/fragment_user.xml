@@ -8,6 +8,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.user.UserFragment"
     android:layout_marginBottom="60dp"
+    style="@style/BACKGROUND"
     android:id="@+id/fragment_user">
 
     <LinearLayout
@@ -18,7 +19,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"> <!-- Set a valid background -->
+            style="@style/BACKGROUND"
+            >
 
             <ImageView
                 android:id="@+id/profile_background"
@@ -28,6 +30,7 @@
                 android:src="@drawable/book3"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+                style="@style/BACKGROUND"
 
                 app:layout_constraintBottom_toTopOf="@+id/user_name"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +43,7 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
 
-                android:background="@color/title_background"
-                android:textColor="@color/text"
+                style="@style/TITLE"
                 android:textSize="30sp"
                 android:text="@string/sample"
 
@@ -55,8 +57,7 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
 
-                android:background="@color/title_background"
-                android:textColor="@color/text"
+                style="@style/TITLE"
                 android:textSize="25sp"
                 android:text="@string/sample"
 
@@ -99,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
 
-                android:background="@color/background">
+                style="@style/BACKGROUND">
 
                 <Button
                     android:id="@+id/account"
@@ -108,9 +109,8 @@
                     android:layout_margin="5dp"
                     android:drawableStart="@drawable/ic_account_circle_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" Account" />
@@ -123,9 +123,8 @@
 
                     android:drawableStart="@drawable/ic_notifications_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
 
@@ -139,9 +138,7 @@
 
                     android:drawableLeft="@drawable/ic_add_box_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
 
                     android:textSize="25sp"
                     android:textAllCaps="false"
@@ -157,9 +154,8 @@
 
                     android:drawableLeft="@drawable/ic_library_books_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" Your works" />
@@ -173,9 +169,8 @@
 
                     android:drawableLeft="@drawable/ic_account_box_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" Following author" />
@@ -188,9 +183,8 @@
 
                     android:drawableLeft="@drawable/ic_account_box_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" Follower" />
@@ -207,9 +201,8 @@
 
                     android:drawableLeft="@drawable/ic_history_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" History" />
@@ -222,9 +215,8 @@
 
                     android:drawableLeft="@drawable/ic_info_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" About this app" />
@@ -237,9 +229,8 @@
 
                     android:drawableLeft="@drawable/ic_help_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" Help and Feedback" />
@@ -252,9 +243,8 @@
 
                     android:drawableLeft="@drawable/ic_settings_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" Setting" />
@@ -267,9 +257,8 @@
 
                     android:drawableLeft="@drawable/ic_settings_black_24"
 
-                    android:backgroundTint="@color/title_background"
-                    android:drawableTint="@color/text"
-                    android:textColor="@color/text"
+                    style="@style/BUTTON"
+
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" Mute setting" />

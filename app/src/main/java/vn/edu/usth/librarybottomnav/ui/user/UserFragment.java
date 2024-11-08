@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import vn.edu.usth.librarybottomnav.databinding.FragmentUserBinding;
 import vn.edu.usth.librarybottomnav.ui.user.login.LoginActivity;
+import vn.edu.usth.librarybottomnav.ui.user.setting.SettingActivity;
 
 public class UserFragment extends Fragment {
 
@@ -70,8 +71,13 @@ public class UserFragment extends Fragment {
         });
 
         binding.setting.setOnClickListener(view -> {
-            Toast.makeText(getContext(), "Setting clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), SettingActivity.class);
+
+            getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+            startActivity(intent);
         });
+
 
         binding.muteSetting.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Mute setting clicked", Toast.LENGTH_SHORT).show();

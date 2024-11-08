@@ -11,10 +11,7 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background"
-        app:tabSelectedTextColor="@color/text"
-        app:tabTextColor="@color/text"
-        app:tabIndicatorColor="@color/accent"/>
+        style="@style/TAB"/>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/order_pager"
         android:layout_below="@id/tab_layout"

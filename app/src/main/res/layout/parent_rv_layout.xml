@@ -14,13 +14,13 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:id="@+id/tv_parent_title"
-        android:background="@color/title_background"
-        android:textColor="@color/text"
+        style="@style/TITLE"
         android:text="@string/title"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/BACKGROUND"
         android:padding="10dp"
         android:id="@+id/rv_child" >
 
