@@ -31,6 +31,13 @@ public class SearchFragment extends Fragment {
 
     @Nullable
     @Override
+    public void onResume() {
+        super.onResume();
+        performSearch(searchView.getQuery().toString()); // Re-run the last search query or a default one
+    }
+
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_search, container, false);
     }
@@ -51,8 +58,8 @@ public class SearchFragment extends Fragment {
         searchResultsList = new ArrayList<>();
         parentModelClassArrayList = new ArrayList<>();
 
-        // Set up the initial data
-        setupInitialData();
+//        // Set up the initial data
+//        setupInitialData();
 
         // Set up the parent adapter with an empty search result list
         parentAdapterVertical = new ParentAdapterVertical(parentModelClassArrayList, getContext());
@@ -101,20 +108,20 @@ public class SearchFragment extends Fragment {
 
 
 
-    private void setupInitialData() {
-        // Add initial books to the list
-        allBooksList.add(new ChildModelClass(R.drawable.book3, 3, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book9, 9, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book5, 5, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book6, 6, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book7, 7, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book8, 8, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book1, 1, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book19, 19, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book2, 2, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book18, 18, "Title", "Author", "Description", "H", "Detailed Description"));
-        allBooksList.add(new ChildModelClass(R.drawable.book11, 11, "Title", "Author", "Description", "H", "Detailed Description"));
-
-        parentModelClassArrayList.add(new ParentModelClass("", allBooksList));
-    }
+//    private void setupInitialData() {
+//        // Add initial books to the list
+//        allBooksList.add(new ChildModelClass(R.drawable.book3, 3, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book9, 9, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book5, 5, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book6, 6, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book7, 7, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book8, 8, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book1, 1, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book19, 19, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book2, 2, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book18, 18, "Title", "Author", "Description", "H", "Detailed Description"));
+//        allBooksList.add(new ChildModelClass(R.drawable.book11, 11, "Title", "Author", "Description", "H", "Detailed Description"));
+//
+//        parentModelClassArrayList.add(new ParentModelClass("", allBooksList));
+//    }
 }
