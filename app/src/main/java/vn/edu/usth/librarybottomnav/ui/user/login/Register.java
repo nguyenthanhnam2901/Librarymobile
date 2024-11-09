@@ -49,7 +49,7 @@ public class Register extends AppCompatActivity {
                 long result = db.insertUser(strEmail, strUsername, strPassword);
                 if (result != -1) {
                     Toast.makeText(Register.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Register.this, MainActivity.class));
+                    startActivity(new Intent(Register.this, LoginActivity.class));
                 } else {
                     Toast.makeText(Register.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                 }
