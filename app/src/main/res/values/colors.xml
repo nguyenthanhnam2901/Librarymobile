@@ -16,4 +16,10 @@
 
     <color name="purple">#8692f7</color>
 
+    <color name="text">#0A3A75</color>
+    <color name="background">#ffffff</color>
+    <color name="title_background">#ffffff</color>
+    <color name="accent">#FF000000</color>
+    <color name="Accent">#4CAF50</color>
+
 </resources>

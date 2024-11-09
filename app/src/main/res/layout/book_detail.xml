@@ -6,10 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.BookDetail"
-    style="@style/BACKGROUND"
 
     android:paddingTop="100dp"
-
     android:id="@+id/main">
 
     <RelativeLayout
@@ -20,14 +18,11 @@
             android:id="@+id/img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:maxHeight="200dp"
             android:maxWidth="150dp"
             android:adjustViewBounds="true"
-
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
-
             android:scaleType="centerInside"
             android:src="@drawable/book1"/>
 
@@ -36,121 +31,75 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-
             android:textStyle="normal"
             android:textSize="20sp"
-            style="@style/TEXT"
-
-            android:layout_below="@+id/img"
+            android:textColor="@color/text"
+            android:layout_below="@id/img"
             android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-
             android:gravity="center"
-
-            android:text="@string/title"
-            />
+            android:text="@string/title"/>
 
         <TextView
             android:id="@+id/tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-
             android:textStyle="normal"
             android:textSize="20sp"
-            style="@style/TEXT"
-
-
-            android:layout_below="@+id/tv1"
+            android:textColor="@color/text"
+            android:layout_below="@id/tv1"
             android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-
             android:gravity="center"
-
-            android:text="Author"
-            />
+            android:text="Author"/>
 
         <TextView
             android:id="@+id/tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-
             android:textStyle="normal"
             android:textSize="15sp"
-            style="@style/TEXT"
-
-            android:layout_below="@+id/tv2"
+            android:textColor="@color/text"
+            android:layout_below="@id/tv2"
             android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-
-            android:gravity="center|fill"
-
-            android:text="Category"
-            />
+            android:gravity="center"
+            android:text="Category"/>
 
         <TextView
             android:id="@+id/tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-
             android:textStyle="normal"
             android:textSize="15sp"
-            style="@style/TEXT"
-
-            android:layout_below="@+id/tv3"
+            android:textColor="@color/text"
+            android:layout_below="@id/tv3"
             android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
+            android:gravity="left"
+            android:text="Description"/>
 
-            android:gravity="center|fill"
-
-            android:text="Description"
-            />
+        <!-- New TextView for displaying Book Content -->
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/tv4"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:text="Book content goes here..."
+            android:visibility="gone"
+            android:scrollbars="vertical"/>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv4">
+            android:layout_below="@id/tvContent">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center" >
 
-                <Button
-                    android:id="@+id/button1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    style="@style/TEXT"
-                    android:text="Read"
-                    android:onClick="Effect1" />
-
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    style="@style/TEXT"
-                    android:text="Follow"
-                    android:onClick="Effect2" />
-
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    style="@style/TEXT"
-                    android:text="Plan to read"
-                    android:onClick="Effect3" />
-
-            </LinearLayout>
 
         </FrameLayout>
 

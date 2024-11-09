@@ -188,9 +188,22 @@
                     android:textSize="25sp"
                     android:textAllCaps="false"
                     android:text=" Follower" />
+                <Button
+                    android:id="@+id/followingBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+
+                    android:drawableLeft="@drawable/add_box"
+
+                    style="@style/BUTTON"
+
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:text=" Following book" />
 
                 <Button
-                    android:id="@+id/history"
+                    android:id="@+id/addAuthor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -199,13 +212,13 @@
 
                     android:layout_marginBottom="20dp"
 
-                    android:drawableLeft="@drawable/ic_history_black_24"
+                    android:drawableLeft="@drawable/add_box"
 
                     style="@style/BUTTON"
 
                     android:textSize="25sp"
                     android:textAllCaps="false"
-                    android:text=" History" />
+                    android:text=" Add author" />
 
                 <Button
                     android:id="@+id/info"

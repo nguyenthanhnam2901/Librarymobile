@@ -2,6 +2,7 @@ package vn.edu.usth.librarybottomnav.ui.recycler;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,23 +46,32 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ChildModelClass currentItem = childModelClassList.get(position);
 
+        // Set the data for the view holder
         holder.iv_child_image.setImageResource(currentItem.getImage());
         holder.tv_title.setText(currentItem.getTitle());
         holder.tv_author.setText(currentItem.getAuthor());
         holder.tv_category.setText(currentItem.getCategory());
-        holder.tv_description.setText(currentItem.getDescription()); // Add description if necessary
+        holder.tv_description.setText(currentItem.getDescription());
 
+        // Adding a Log to check the ID value
+        int bookId = currentItem.getId(); // Assuming getId() returns the correct book ID
+        System.out.println("DEBUG: Book ID passed to BookDetail: " + bookId); // Log to check ID
+
+        // Set onClickListener to navigate to BookDetail
         holder.cv_child_item.setOnClickListener(view -> {
             Intent intent = new Intent(context, BookDetail.class);
+
+            // Pass all relevant data
+            intent.putExtra("id", bookId); // Ensure this key matches in BookDetail
             intent.putExtra("image", currentItem.getImage());
             intent.putExtra("title", currentItem.getTitle());
             intent.putExtra("author", currentItem.getAuthor());
-            intent.putExtra("description", currentItem.getDescription()); // Add if required
+            intent.putExtra("description", currentItem.getDescription());
             intent.putExtra("category", currentItem.getCategory());
+
             context.startActivity(intent);
         });
     }
-
 
     @Override
     public int getItemCount() {

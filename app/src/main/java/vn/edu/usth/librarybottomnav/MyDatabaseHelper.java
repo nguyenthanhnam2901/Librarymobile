@@ -134,15 +134,42 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    Cursor readAllData() {
-        String query = "SELECT * FROM "+ TB_book;
+    public Cursor getBookById(String bookId) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = null;
-        if (db != null) {
-            cursor = db.rawQuery(query, null);
-        }
-        return cursor;
+        return db.rawQuery("SELECT * FROM " + TB_book + " WHERE " + TB_book_id + " = ?", new String[]{bookId});
     }
+    public String getAuthorName(int authorId) {
+        String authorName = "Unknown";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + TB_author_name + " FROM " + TB_author + " WHERE " + TB_author_id + " = ?", new String[]{String.valueOf(authorId)});
+        if (cursor != null && cursor.moveToFirst()) {
+            authorName = cursor.getString(0);
+            cursor.close();
+        }
+        return authorName;
+    }
+
+    // Method to get the category's name by ID
+    public String getCategoryName(int categoryId) {
+        String categoryName = "Unknown";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + TB_category_name + " FROM " + TB_category + " WHERE " + TB_category_id + " = ?", new String[]{String.valueOf(categoryId)});
+        if (cursor != null && cursor.moveToFirst()) {
+            categoryName = cursor.getString(0);
+            cursor.close();
+        }
+        return categoryName;
+    }
+    public long insertAuthor(String title) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TB_author_name, title);
+
+
+        long resulta = db.insert(TB_author, null, values);
+        return resulta;
+    }
+
 
 
     public long insertUser(String gmail, String user_name, String password) {
@@ -266,58 +293,40 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return searchResults;
     }
 
-
-    public String getAuthorName(int authorId) {
-        String authorName = "Unknown";
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TB_author,
-                new String[]{TB_author_name},
-                TB_author_id + " = ?",
-                new String[]{String.valueOf(authorId)},
-                null, null, null);
-
-        if (cursor != null && cursor.moveToFirst()) {
-            authorName = cursor.getString(cursor.getColumnIndexOrThrow(TB_author_name));
-            cursor.close();
-        }
-        return authorName;
-    }
-
-    // Method to fetch category name based on ID
-    public String getCategoryName(int categoryId) {
-        String categoryName = "Unknown";
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TB_category,
-                new String[]{TB_category_name},
-                TB_category_id + " = ?",
-                new String[]{String.valueOf(categoryId)},
-                null, null, null);
-
-        if (cursor != null && cursor.moveToFirst()) {
-            categoryName = cursor.getString(cursor.getColumnIndexOrThrow(TB_category_name));
-            cursor.close();
-        }
-        return categoryName;
-    }
-
     public Cursor getBookDetailsById(int bookId) {
         SQLiteDatabase db = this.getReadableDatabase();
-        // Define the columns you want to fetch
-        String[] columns = {
-                TB_book_id,
-                TB_book_title,
-                TB_book_content,
-                TB_book_author_id,
-                TB_book_category_id
-        };
 
-        // Define the WHERE clause (book_id = ?)
-        String selection = TB_book_id + " = ?";
-        String[] selectionArgs = {String.valueOf(bookId)};
+        // Log the bookId being queried
+        System.out.println("DEBUG: Querying Book ID: " + bookId);
 
-        // Query the database
-        return db.query(TB_book, columns, selection, selectionArgs, null, null, null);
+        // Ensure correct table and column names
+        String query = "SELECT * FROM book WHERE id = id";
+        return db.rawQuery(query, new String[]{String.valueOf(bookId)});
     }
+
+
+    // MyDatabaseHelper.java
+    public String getBookContent(int bookId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String content = null;
+
+        // Query to fetch the book content based on the book ID
+        Cursor cursor = db.rawQuery("SELECT content FROM book WHERE id = id", new String[]{String.valueOf(bookId)});
+
+        if (cursor != null && cursor.moveToFirst()) {
+            // Get the content column value
+            content = cursor.getString(cursor.getColumnIndexOrThrow("content"));
+            cursor.close();
+        } else {
+            System.err.println("ERROR: No content found for Book ID: " + bookId);
+        }
+
+        db.close();
+        return content;
+    }
+
+
+
 
 }
 

@@ -99,7 +99,8 @@ public class UserFragment extends Fragment {
 
         binding.followingAuthor.setOnClickListener(view -> {
             if (isLoggedIn) {
-                Toast.makeText(getContext(), "Following Author clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), vn.edu.usth.librarybottomnav.ui.FollowAuthorActivity.class);
+                startActivity(intent);
             } else {
                 Toast.makeText(getContext(), "Please log in first", Toast.LENGTH_SHORT).show();
             }
@@ -113,9 +114,19 @@ public class UserFragment extends Fragment {
             }
         });
 
-        binding.history.setOnClickListener(view -> {
+        binding.followingBook.setOnClickListener(view -> {
             if (isLoggedIn) {
-                Toast.makeText(getContext(), "History clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), vn.edu.usth.librarybottomnav.ui.FollowBookActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getContext(), "Please log in first", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.addAuthor.setOnClickListener(view -> {
+            if (isLoggedIn) {
+                Intent intent = new Intent(getContext(), vn.edu.usth.librarybottomnav.ui.AddauthorActivity.class);
+                startActivity(intent);
             } else {
                 Toast.makeText(getContext(), "Please log in first", Toast.LENGTH_SHORT).show();
             }
