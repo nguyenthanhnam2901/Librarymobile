@@ -35,63 +35,47 @@
                 android:textStyle="bold"
                 android:textColor="@color/text" />
 
-            <!-- Email Input -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:hint="@string/email">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/custom_edittext"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:padding="8dp"
-                    android:textColor="@color/text"
-                    android:textColorHighlight="@color/cardview_dark_background" />
-            </com.google.android.material.textfield.TextInputLayout>
+            <!-- Email Input -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/email"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Email"
+                android:padding="8dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="40dp" />
 
             <!-- Username Input -->
-            <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/username">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/custom_edittext"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:padding="8dp"
-                    android:textColor="@color/text"
-                    android:textColorHighlight="@color/cardview_dark_background" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="50dp"
+                android:id="@+id/username"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Username"
+                android:padding="8dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="20dp" />
 
             <!-- Password Input -->
-            <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/password">
+                android:layout_height="50dp"
+                android:id="@+id/password"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="20dp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/custom_edittext"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:inputType="textPassword"
-                    android:padding="8dp"
-                    android:textColor="@color/text"
-                    android:textColorHighlight="@color/cardview_dark_background" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Signup Button -->
             <Button
