@@ -23,6 +23,19 @@ public class UserFragment extends Fragment {
     private FragmentUserBinding binding;
     TextView user_name, user_detail;
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // Re-fetch updated user detail from SharedPreferences
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String updatedUserDetail = sharedPreferences.getString("user_detail", "");
+
+        // Set the updated detail in the user_detail TextView
+        binding.userDetail.setText(updatedUserDetail);
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -35,6 +48,7 @@ public class UserFragment extends Fragment {
 
         // Set the username in user_name TextView
         binding.userName.setText(username);
+
 
         // Check if the user is logged in
         boolean isLoggedIn = !username.equals("Guest");
