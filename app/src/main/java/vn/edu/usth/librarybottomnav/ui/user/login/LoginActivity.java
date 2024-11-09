@@ -1,6 +1,7 @@
 package vn.edu.usth.librarybottomnav.ui.user.login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,8 +42,16 @@ public class LoginActivity extends AppCompatActivity {
 
             if (db.isUserValid(strUsername, strPassword)) {
                 Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
+                // Save username to SharedPreferences
+                SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("username", strUsername);
+                editor.apply();
+
                 // Navigate to the MainActivity after successful login
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish(); // Optional: Close LoginActivity
             } else {
                 Toast.makeText(LoginActivity.this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
             }
