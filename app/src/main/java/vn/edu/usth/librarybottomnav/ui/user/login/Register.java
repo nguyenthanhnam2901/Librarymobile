@@ -45,7 +45,11 @@ public class Register extends AppCompatActivity {
 
             if (strUsername.isEmpty() || strEmail.isEmpty() || strPassword.isEmpty()) {
                 Toast.makeText(Register.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            } else if (db.isUsernameExists(strUsername)) {
+                // Check if username exists
+                Toast.makeText(Register.this, "Username already exists", Toast.LENGTH_SHORT).show();
             } else {
+                // If username doesn't exist, insert user
                 long result = db.insertUser(strEmail, strUsername, strPassword);
                 if (result != -1) {
                     Toast.makeText(Register.this, "Registration Successful", Toast.LENGTH_SHORT).show();

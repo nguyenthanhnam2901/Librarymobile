@@ -83,7 +83,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 TB_users_id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                 TB_users_gmail + " TEXT NOT NULL, " +
                 TB_users_password + " INTEGER NOT NULL, " +
-                TB_users_user_name + " TEXT NOT NULL);";
+                TB_users_user_name + " TEXT UNIQUE NOT NULL);";
 
         String tbPosts = "CREATE TABLE " + TB_posts + " (" +
                 TB_posts_id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
@@ -284,7 +284,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 // Assuming the 6th parameter is a description (you can adjust as needed)
                 String placeholderDescription = "";  // Replace with the actual description or an empty string
 
-                searchResults.add(new ChildModelClass(R.drawable.placeholder, id, bookTitle, bookAuthor, content, bookCategory, placeholderDescription));
+                searchResults.add(new ChildModelClass(R.drawable.book1, id, bookTitle, bookAuthor, content, bookCategory, placeholderDescription));
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -324,6 +324,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return content;
     }
+
+    // Inside MyDatabaseHelper.java
+    public boolean isUsernameExists(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE user_name = ?", new String[]{username});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+
 
 
 
