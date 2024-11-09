@@ -16,11 +16,11 @@ import androidx.fragment.app.Fragment;
 import vn.edu.usth.librarybottomnav.databinding.FragmentUserBinding;
 import vn.edu.usth.librarybottomnav.ui.user.login.LoginActivity;
 import vn.edu.usth.librarybottomnav.ui.user.setting.SettingActivity;
+import vn.edu.usth.librarybottomnav.ui.user.login.ExistedActivity;
 
 public class UserFragment extends Fragment {
 
     private FragmentUserBinding binding;
-
     TextView user_name, user_detail;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -36,50 +36,77 @@ public class UserFragment extends Fragment {
         // Set the username in user_name TextView
         binding.userName.setText(username);
 
+        // Check if the user is logged in
+        boolean isLoggedIn = !username.equals("Guest");
+
+        // If the user is logged in, change the "account" button to "ExistedActivity"
+        if (isLoggedIn) {
+            binding.account.setText("Account infos");
+
+            // Set the onClickListener for "Existed Account"
+            binding.account.setOnClickListener(view -> {
+                Intent intent = new Intent(getActivity(), ExistedActivity.class);
+                startActivity(intent);
+            });
+
+        } else {
+            // If the user is not logged in, keep "Login" button and set its listener
+            binding.account.setText("Login");
+
+            binding.account.setOnClickListener(view -> {
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                startActivity(intent);
+            });
+
+        }
+
         // Existing click listeners for other buttons
-        binding.account.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            startActivity(intent);
-        });
-
-
-        binding.account.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-
-            getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
-            startActivity(intent);
-        });
-
-
         binding.notification.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Notification clicked", Toast.LENGTH_SHORT).show();
         });
 
         binding.summitWork.setOnClickListener(view -> {
-            Intent intent = new Intent(getContext(), vn.edu.usth.librarybottomnav.ui.AddBookActivity.class);
-            startActivity(intent);
+            if (isLoggedIn) {
+                Intent intent = new Intent(getContext(), vn.edu.usth.librarybottomnav.ui.AddBookActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getContext(), "Please log in first", Toast.LENGTH_SHORT).show();
+            }
         });
 
         binding.yourWork.setOnClickListener(view -> {
-            Toast.makeText(getContext(), "Your Work clicked", Toast.LENGTH_SHORT).show();
+            if (isLoggedIn) {
+                Toast.makeText(getContext(), "Your Work clicked", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Please log in first", Toast.LENGTH_SHORT).show();
+            }
         });
 
         binding.followingAuthor.setOnClickListener(view -> {
-            Toast.makeText(getContext(), "Following Author clicked", Toast.LENGTH_SHORT).show();
+            if (isLoggedIn) {
+                Toast.makeText(getContext(), "Following Author clicked", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Please log in first", Toast.LENGTH_SHORT).show();
+            }
         });
 
-
         binding.follower.setOnClickListener(view -> {
-            Toast.makeText(getContext(), "Follower clicked", Toast.LENGTH_SHORT).show();
+            if (isLoggedIn) {
+                Toast.makeText(getContext(), "Follower clicked", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Please log in first", Toast.LENGTH_SHORT).show();
+            }
         });
 
         binding.history.setOnClickListener(view -> {
-            Toast.makeText(getContext(), "History clicked", Toast.LENGTH_SHORT).show();
+            if (isLoggedIn) {
+                Toast.makeText(getContext(), "History clicked", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Please log in first", Toast.LENGTH_SHORT).show();
+            }
         });
 
-        // Add listeners for the additional TextViews if needed
         binding.info.setOnClickListener(view -> {
             Toast.makeText(getContext(), "About this App clicked", Toast.LENGTH_SHORT).show();
         });
@@ -90,20 +117,18 @@ public class UserFragment extends Fragment {
 
         binding.setting.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), SettingActivity.class);
-
             getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
             startActivity(intent);
         });
-
 
         binding.muteSetting.setOnClickListener(view -> {
             Toast.makeText(getContext(), "Mute setting clicked", Toast.LENGTH_SHORT).show();
         });
 
-
         return root;
     }
+
+
 
     @Override
     public void onDestroyView() {
